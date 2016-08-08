@@ -2,29 +2,6 @@ body{
     margin: 0px;
 }
 
-.animateExample .example-enter,
-.animateExample .example-leave {
-    -webkit-transition: all .5s;
-    transition: all .5s;
-}
-.animateExample .example-enter {
-    margin-top: 20px;
-    opacity: 0;    
-}
-
-.animateExample .example-enter.example-enter-active {
-    margin-top: 0px;
-    opacity: 1;
-}
-
-.animateExample .example-leave {
-    opacity: 1;
-}
-
-.animateExample .example-leave.example-leave-active {
-    max-height:  0px;
-    opacity: 0;    
-}
 .Fold{
     float: left;
     position: absolute;

@@ -1,6 +1,6 @@
 var Fold = React.createClass({
     getInitialState: function() {
-        return {width:460,height:460,open:false,count:41};
+        return {width:this.props.width || 460,height:this.props.width || 460,open:(this.props.open != undefined)?this.props.open:false,count:this.props.count || 41,text:this.props.text || "",src:this.props.src || ""};
     },
     componentWillMount: function () {
         this.setOpen(this.state.open);
@@ -59,18 +59,19 @@ var Fold = React.createClass({
             tempSheetStyle.transformOrigin= '50% 0%';
             tempSheetStyle.transform = 'translateY(' + (s) + 'px)' + ' translateZ(' + (h*sin) + 'px)' + ' rotateX('+(rot*angle)+'deg)';
             tempSheetStyle.backgroundPosition= '50% '+(-hh*i) + 'px';
+            tempSheetStyle.backgroundImage= "url("+this.state.src+")";
             s += i%2?cos:hh;
             Nodes[i] = <div key = {i} className={'Sheet '+style} style = {tempSheetStyle}/>
         }
         return (
                 <div className = "Fold" style = {this.FoldStyle} onMouseOver = {this.onMouseOver} onMouseOut = {this.onMouseOut}> 
-                    <div className = "Text">HTML5</div>
+                    <div className = "Text">{this.state.text}</div>
                     {Nodes}
                 </div> 
         );
     }
 });
 ReactDOM.render(
-    <Fold />,
+    <Fold src = {"20339746.jpg"} text = {"HTML5"}/>,
     document.getElementById('example01')
 );

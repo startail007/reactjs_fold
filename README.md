@@ -1,7 +1,7 @@
 摺痕效果(fold)
 =========================
 ### 演示
-[線上觀看](http://virtools.github.io/reactjs_fold/v1/index.html)
+[線上觀看](http://startail007.github.io/reactjs_fold/v1/index.html)
 ### 設置
 |設置|默認值|描述|
 |---|---|---|
